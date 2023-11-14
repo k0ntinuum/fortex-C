@@ -15,16 +15,13 @@ void encoding_demo(){
 	print_key(f);
 	for (u32 i = 0; i < 27; i++) {
 		randomize_text(p);
-		//copy_key(g,f);
 		fortex_encrypt(c,p,f);
         fortex_decrypt(d,c,f);
-		//copy_key(g,f);
-		//decode(d,c,g);
 		check_text_equality(d,p);
 		record_difference(e,p,c);
 		rgb(255,255,255);printf("f(");rgb(255,0,0);print_text(p);rgb(255,255,255);
 		printf(") = ");rgb(255,255,0);print_text(c);printf("  ");rgb(hue,hue,hue);
-		//print_text(e);
+        if (B == 2) print_text(e);
         printf("\n");
 	}
 }

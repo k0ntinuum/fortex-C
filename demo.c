@@ -37,17 +37,11 @@ void demo() {
     randomize_len();
     randomize_key(f);
     printf("\n\n\n\n");
-    
-    //print_f_color(f);
-    //printf("\n");
     for (u32 i = 0; i < 1000000 ; i++) {
         cursor_to(2,0);
         print_key(f);
         spin_key(f,1);
         usleep(50000);
-        //print_g();
-        //printf("\n");
-
     }
     show_cursor();
 	

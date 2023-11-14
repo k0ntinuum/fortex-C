@@ -21,22 +21,22 @@ void cursor_to(int r, int c) {
     printf("\x1b[%d;%dH",r,c);
 }
 
-// void print_symbol(u32 i) {
-//     switch (i) {
-//         case 0 : printf("O");break;
-//         case 1 : printf("|");break;
-//         case 2 : printf("2");break;
-//         default : printf("\u2591");break;
-//     }
-// }
 void print_symbol(u32 i) {
     switch (i) {
         case 0 : printf("O");break;
-        case 1 : printf("\u2588");break;
-        case 2 : printf("|");break;
+        case 1 : printf("|");break;
+        case 2 : printf("2");break;
         default : printf("\u2591");break;
     }
 }
+// void print_symbol(u32 i) {
+//     switch (i) {
+//         case 0 : printf("O");break;
+//         case 1 : printf("\u2588");break;
+//         case 2 : printf("|");break;
+//         default : printf("\u2591");break;
+//     }
+// }
 void print_key(const u32 k[N][L]) {
 	for (u32 i = 0; i < N; i++) {
 		for (u32 j = 0; j < len[i]; j++) print_symbol(k[i][j]);
@@ -75,23 +75,4 @@ void print_text(u32 t[T]) {
 	for (u32 i = 0; i < T; i++) print_symbol(t[i]);
 }
 
-// void print_status() {
-//         printf("p = ");print_text(p);printf("\n");
-//         printf("c = ");print_text(c);printf("\n");
-//         printf("d = ");print_text(d);printf("\n\n");
-// }
-// void print_f_color() {
-//     u32 hue = 90;
-//     u32 hue_2 = 20;
-// 	for (u32 i = 0; i < 1; i++) {
-//         printf("            ");
-// 		for (u32 j = 0; j < 1; j++) {
-//             //h[i][j] == 0 ? rgb(255,0,0) : rgb(255,255,0);
-//             h[i][j] == 0 ? rgb(hue,hue,hue) : rgb(hue_2,hue_2,hue_2);
-//             //printf("%s", h[i][j] == 0 ? "O " : "| ");
-//             printf("%s", f[i][j] == 0 ? "O " : "\u2588\u2588");
-//         }
-// 		printf("\n");
-// 	}
-// }
 	

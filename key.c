@@ -1,8 +1,3 @@
-// void spin_row(u32 i) {
-//     u32 tmp = g[i][0];
-//     for (u32 j = 1 ; j < len[i] ; j++) g[i][j-1] = g[i][j];
-//     g[i][len[i]-1] = tmp;
-// }
 void spin_key(u32 k[N][L], u32 a) {
     u32 temp;
     for (u32 t = 0; t < a ; t++) {

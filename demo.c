@@ -31,19 +31,20 @@
 
 
 void demo() {
+    u32 f[N][L] = {0};
     cls();
     hide_cursor();
-    randomize_f();
-    reset_g();
+    randomize_len();
+    randomize_key(f);
     printf("\n\n\n\n");
     
     //print_f_color(f);
     //printf("\n");
     for (u32 i = 0; i < 1000000 ; i++) {
         cursor_to(2,0);
-        print_g();
-        spin_g(1);
-        usleep(90000);
+        print_key(f);
+        spin_key(f,1);
+        usleep(50000);
         //print_g();
         //printf("\n");
 

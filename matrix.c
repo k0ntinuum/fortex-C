@@ -23,9 +23,7 @@ void copy_key(u32 t[N][N],u32 s[N][N]) {
 void randomize_p() {
 	for (u32 i = 0; i < T; i++) p[i] = random_bit();
 }
-void copy_text(u32 t[T] , u32 s[T]) {
-	for (u32 i = 0; i < T; i++) t[i] = s[i];
-}
+
 void check_decryption() {
 	for (u32 i = 0; i < T; i++) if (check_p[i] != d[i]) printf("recovery failure at bit %d \n",i);
 }

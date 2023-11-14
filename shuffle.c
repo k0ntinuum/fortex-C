@@ -9,37 +9,15 @@ void shuffle(u32* v, u32 len) {
     }
 }
 
-void randomize_len() {
-	for (u32 i = 0; i < N; i++) len[i] = i+1;
-	//shuffle(len, N);
+void check_text_equality(const u32 u[T], const u32 v[T] ) {
+	for (u32 i = 0; i < T; i++) if (u[i] != v[i]) printf("inequality found at symbol %d \n",i);
 }
 
-void randomize_f() {
-    for (u32 i = 0; i < N; i++) 
-        for (u32 j = 0; j < len[i]; j++)
-            f[i][j] = arc4random_uniform(B);
-}
-void randomize_p() {
-	for (u32 i = 0; i < T; i++) p[i] = arc4random_uniform(B);
-}
-void circshift(u32* v, u32 l, u32 a) {
-    for (u32 i = 0; i < l; i++) temp[i] = v[(i + a)%l];
-    for (u32 i = 0; i < l; i++) v[i] = temp[i];
+void record_difference(u32* x, const u32* y, const u32* z) {
+    for (u32 i = 0; i < T; i++) x[i] = (y[i] != z[i]);
 }
 
-void spin_row(u32 i) {
-    u32 tmp = g[i][0];
-    for (u32 j = 1 ; j < len[i] ; j++) g[i][j-1] = g[i][j];
-    g[i][len[i]-1] = tmp;
+void copy_text(u32 d[T] , u32 s[T]) {
+	for (u32 i = 0; i < T; i++) d[i] = s[i];
 }
-void spin_g(u32 a) {
-    for (u32 j = 0; j < a ; j++) for (u32 i = 0; i < N; i++) spin_row(i);
-}
-u32 stack() {
-	u32 s = 0;
-	for (u32 i = 0; i < N; i++) s += g[i][0];
-	return s;
-}
-void check_decryption() {
-	for (u32 i = 0; i < T; i++) if (p[i] != d[i]) printf("recovery failure at bit %d \n",i);
-}
+

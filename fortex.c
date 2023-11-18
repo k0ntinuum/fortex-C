@@ -12,12 +12,9 @@ const u32 B = 2;
 u32 len[N] = {0};
 #include"shuffle.c"
 #include"randomize.c"
-
 #include"key.c"
 #include"print.c"
-//#include"matrix.c"
 #include"encode.c"
-//#include"encrypt.c"
 #include"encryption_demo.c"
 #include"demo.c"
 	
